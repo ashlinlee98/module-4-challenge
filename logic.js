@@ -1,13 +1,23 @@
 // TODO: Create logic to toggle the light/dark mode styles for the page and circle. The mode should be saved to local storage.
+let modeToggleButton = document.getElementById('modeToggle');
+let submitButton = document.getElementById('submit');
 
 const lightMode = {
   background: 'white',
-  textColor: 'black'
+  textColor: 'black',
+  modeToggleButtonColor: '#e2e6e6',
+  submitButtonColor: '#aee9fe',
+  inputBackgroundColor: 'white',
+  textareaBackgroundColor: 'white'
 };
 
 const darkMode = {
   background: 'black',
-  textColor: 'white'
+  textColor: 'white',
+  modeToggleButtonColor: '#333535',
+  submitButtonColor: '#05305d',
+  inputBackgroundColor: '#333',
+  textareaBackgroundColor: '#333'
 };
 
 // Function to apply light mode styles
@@ -15,10 +25,33 @@ const applyLightMode = () => {
   document.body.style.backgroundColor = lightMode.background;
   document.body.style.color = lightMode.textColor;
 
+  // Apply styles to buttons
+  modeToggleButton.style.backgroundColor = lightMode.modeToggleButtonColor;
+  modeToggleButton.style.color = lightMode.textColor;
+
+  submitButton.style.backgroundColor = lightMode.submitButtonColor;
+  submitButton.style.color = lightMode.textColor;
+
+
+  // Apply styles to text input boxes
+  const inputs = document.querySelectorAll('input');
+  const textareas = document.querySelectorAll('textarea');
+  
+  inputs.forEach(input => {
+    input.style.backgroundColor = lightMode.inputBackgroundColor;
+    input.style.color = lightMode.textColor;
+    input.style.border = '1px solid lightgray';
+  });
+
+  textareas.forEach(textarea => {
+    textarea.style.backgroundColor = lightMode.textareaBackgroundColor;
+    textarea.style.color = lightMode.textColor;
+  });
+
   // Apply styles to other elements
   const elements = document.querySelectorAll('header, main, footer');
   elements.forEach(element => {
-    element.style.backgroundColor = 'initial'; // or set specific colors if needed
+    element.style.backgroundColor = lightMode.background;
     element.style.color = lightMode.textColor;
   });
 };
@@ -27,6 +60,28 @@ const applyLightMode = () => {
 const applyDarkMode = () => {
   document.body.style.backgroundColor = darkMode.background;
   document.body.style.color = darkMode.textColor;
+
+  // Apply styles to buttons
+  modeToggleButton.style.backgroundColor = darkMode.modeToggleButtonColor;
+  modeToggleButton.style.color = darkMode.textColor;
+
+  submitButton.style.backgroundColor = darkMode.submitButtonColor;
+  submitButton.style.color = darkMode.textColor;
+
+  // Apply styles to input boxes
+  const inputs = document.querySelectorAll('input');
+  const textareas = document.querySelectorAll('textarea');
+  
+  inputs.forEach(input => {
+    input.style.backgroundColor = darkMode.inputBackgroundColor;
+    input.style.color = darkMode.textColor;
+    input.style.border = '1px solid #666';
+  });
+
+  textareas.forEach(textarea => {
+    textarea.style.backgroundColor = darkMode.textareaBackgroundColor;
+    textarea.style.color = darkMode.textColor;
+  });
 
   // Apply styles to other elements
   const elements = document.querySelectorAll('header, main, footer');

@@ -11,36 +11,35 @@
   </head>
   <body>
     <!-- TODO: Create landing page elements to match the mock-up provided. At the very least, include the following elements. -->
-  
+    <header>
+      <button id="modeToggle">Toggle Light/Dark Mode</button>
+    </header>
     <!-- A form element that contains the following: -->
-    <form>
+    <form style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); width: 70%;">
       <!-- An input element whose label and id are `username` -->
-      <div class="form-group">
+       <h1 style="text-align: center; margin-bottom: 30px;">What's On Your Mind?</h1>
+      <div class="form-group" style="margin-bottom: 20px;">
         <label for="username">Username</label>
-        <input type="text" id="username" name="username">
+        <input type="text" id="username" name="username" style="width: 100%; padding: 10px;">
       </div>
   
       <!-- An input element whose label and id are `title` -->
-      <div class="form-group">
+      <div class="form-group" style="margin-bottom: 20px;">
         <label for="title">Title</label>
-        <input type="text" id="title" name="title">
+        <input type="text" id="title" name="title" style="width: 100%; padding: 10px;">
       </div>
   
       <!-- A textarea element whose label and id are `content` -->
-      <div class="form-group">
+      <div class="form-group" style="margin-bottom: 20px;">
         <label for="content">Content</label>
-        <textarea id="content" name="content" rows="4"></textarea>
+        <textarea id="content" name="content" rows="4" style="width: 100%; padding: 10px;"></textarea>
       </div>
   
       <!-- A p element whose id is `error` -->
       <p id="error"></p>
 
        <!-- Button that submits the form --> 
-      <button id="submit">Submit</button>
-
-      <button id="modeToggle">Toggle Light/Dark Mode</button>
-    </header>
+      <button id="submit" style="width: 102%; padding: 10px; cursor: pointer; border-radius: 7px;">Submit</button>
     </form>
-  
   </body>
 </html>
