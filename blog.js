@@ -2,6 +2,7 @@
 const selectMain = document.getElementById('mainContent');
 const backButton = document.getElementById('backButton');
 
+addNewPost();
 // TODO: Create a function that builds an element and appends it to the DOM
 function addNewPost() {
     const newPost = {
