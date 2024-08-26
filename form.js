@@ -5,19 +5,22 @@ const selectForm = document.getElementById('formGroup');
 function submitForm(event) {
     event.preventDefault();
 
-    const username = document.getElementById('username').value;
-    const title = document.getElementById('title').value;
-    const content = document.getElementById('content').value;
+    const newPost = {
+      username: document.getElementById('username').value,
+      title: document.getElementById('title').value,
+      content: document.getElementById('content').value
+  }
 
-    if (username === "" || title === "" || content === "") {
+    if (newPost.username === "" || newPost.title === "" || newPost.content === "") {
         // Sends message if any field is empty
         alert("All fields must be filled out");
         return;
     } else {
         // Saves to local storage
-        localStorage.setItem("username", username);
-        localStorage.setItem("title", title);
-        localStorage.setItem("content", content);
+        let postsArray = JSON.parse(localStorage.getItem("postsList")) || [];
+        postsArray.push(newPost);
+        localStorage.setItem("postsList", JSON.stringify(postsArray));
+
         // Clears info that user put into the form
         document.getElementById('username').value = "";
         document.getElementById('title').value = "";
