@@ -1,6 +1,5 @@
 // TODO: Create a variable that selects the main element, and a variable that selects the back button element
 const selectMain = document.getElementById('mainContent');
-const backButton = document.getElementById('backButton');
 
 // TODO: Create a function that builds an element and appends it to the DOM
 function appendToDOM(username, title, content) {
@@ -15,6 +14,15 @@ function appendToDOM(username, title, content) {
     byLine.textContent = `By: ${username}`;
     body.textContent = content;
 
+    // Style the elements
+    newPostSection.style.textAlign = 'center'; // Center text in the section
+    newPostSection.style.borderBottom = '1px solid #ccc'; // Divider line between posts
+    newPostSection.style.marginBottom = '20px'; // Space between posts
+
+    newTitle.style.fontSize = '2em'; // H1 size
+    byLine.style.fontSize = '1.2em'; // H2 size
+    body.style.fontSize = '1em'; // Paragraph size
+
     // Makes other elements children of the new <section> element
     newPostSection.appendChild(newTitle);
     newPostSection.appendChild(byLine);
@@ -27,6 +35,7 @@ function appendToDOM(username, title, content) {
 function noPosts() {
     const noPost = document.createElement('h1');
     noPost.textContent = "You haven't written any blog posts yet. Post will be displayed here once you write something!";
+    noPost.style.textAlign = 'center'; // Center text in no posts message
     selectMain.appendChild(noPost);
 }
 

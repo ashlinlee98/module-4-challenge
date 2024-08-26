@@ -1,11 +1,12 @@
 // TODO: Create logic to toggle the light/dark mode styles for the page and circle. The mode should be saved to local storage.
 let modeToggleButton = document.getElementById('modeToggle');
 let submitButton = document.getElementById('submit');
+let backButton = document.getElementById('backButton');
 
 const lightMode = {
   background: 'white',
   textColor: 'black',
-  modeToggleButtonColor: '#e2e6e6',
+  buttonColor: '#e2e6e6',
   submitButtonColor: '#aee9fe',
   inputBackgroundColor: 'white',
   textareaBackgroundColor: 'white'
@@ -14,7 +15,7 @@ const lightMode = {
 const darkMode = {
   background: 'black',
   textColor: 'white',
-  modeToggleButtonColor: '#333535',
+  buttonColor: '#333535',
   submitButtonColor: '#05305d',
   inputBackgroundColor: '#333',
   textareaBackgroundColor: '#333'
@@ -26,12 +27,17 @@ const applyLightMode = () => {
   document.body.style.color = lightMode.textColor;
 
   // Apply styles to buttons
-  modeToggleButton.style.backgroundColor = lightMode.modeToggleButtonColor;
+  modeToggleButton.style.backgroundColor = lightMode.buttonColor;
   modeToggleButton.style.color = lightMode.textColor;
 
   if (submitButton){
     submitButton.style.backgroundColor = lightMode.submitButtonColor;
     submitButton.style.color = lightMode.textColor;
+  }
+
+  if (backButton){
+    backButton.style.backgroundColor = lightMode.buttonColor;
+    backButton.style.color = lightMode.textColor;
   }
 
   // Apply styles to text input boxes
@@ -67,12 +73,17 @@ const applyDarkMode = () => {
   document.body.style.color = darkMode.textColor;
 
   // Apply styles to buttons
-  modeToggleButton.style.backgroundColor = darkMode.modeToggleButtonColor;
+  modeToggleButton.style.backgroundColor = darkMode.buttonColor;
   modeToggleButton.style.color = darkMode.textColor;
 
-  if (submitButton) {
+  if (submitButton){
     submitButton.style.backgroundColor = darkMode.submitButtonColor;
     submitButton.style.color = darkMode.textColor;
+  }
+
+  if (backButton){
+    backButton.style.backgroundColor = darkMode.buttonColor;
+    backButton.style.color = darkMode.textColor;
   }
 
   // Apply styles to input boxes
